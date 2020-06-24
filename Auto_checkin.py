@@ -15,7 +15,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-try:
+if __name__ == '__main__':
     #这里改成你的统一认证用户名和密码
     user_name = '2019050418'
     pwd = 'Nwafu088724'
@@ -59,5 +59,4 @@ try:
     time.sleep(2)
     #关闭浏览器
     browser.quit()
-except:
-    print('打卡失败')
+
