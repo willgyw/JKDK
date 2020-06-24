@@ -14,10 +14,10 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-if __name__ == '__main__':
+try:
     #这里改成你的统一认证用户名和密码
-    user_name = '2019055264'
-    pwd = 'wr05517'
+    user_name = '2019050418'
+    pwd = 'Nwafu088724'
 
     # 加上这两句话不打开浏览器
     option = webdriver.ChromeOptions()
@@ -40,6 +40,7 @@ if __name__ == '__main__':
 
     # 获取位置
     wz = browser.find_element_by_xpath('/html/body/div[1]/div/div/section/div[4]/ul/li[6]/div/input')
+    print(wz.text)
     ActionChains(browser).move_to_element(wz).click(wz).perform()
     time.sleep(2)
     # 提交
@@ -56,6 +57,8 @@ if __name__ == '__main__':
         ActionChains(browser).move_to_element(ok).click(ok).perform()
         print('你今天已经打过卡了')
     time.sleep(2)
-    #关闭浏览器
-    browser.quit()
+except:
+    print('登录/获取位置/提交失败')
+#关闭浏览器
+browser.quit()
     
