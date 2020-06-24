@@ -21,7 +21,7 @@ if __name__ == '__main__':
 
     # 加上这两句话不打开浏览器
     option = webdriver.ChromeOptions()
-    #option.add_argument('headless') # 设置option
+    option.add_argument('headless') # 设置option
     # 用浏览器打开打卡的网址
     browser = webdriver.Chrome(options=option)
     browser.get('https://app.nwafu.edu.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.nwafu.edu.cn%2Fncov%2Fwap%2Fdefault%2Findex')
