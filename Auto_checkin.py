@@ -15,14 +15,14 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 
-if __name__ == '__main__':
+try:
     #这里改成你的统一认证用户名和密码
-    user_name = '2019050437'
-    pwd = 'Nwafu266116'
+    user_name = '2019050418'
+    pwd = 'Nwafu088724'
 
     # 加上这两句话不打开浏览器
     option = webdriver.ChromeOptions()
-    option.add_argument('headless') # 设置option
+    #option.add_argument('headless') # 设置option
     # 用浏览器打开打卡的网址
     browser = webdriver.Chrome(options=option)
     browser.get('https://app.nwafu.edu.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.nwafu.edu.cn%2Fncov%2Fwap%2Fdefault%2Findex')
@@ -43,16 +43,21 @@ if __name__ == '__main__':
     wz = browser.find_element_by_xpath('/html/body/div[1]/div/div/section/div[4]/ul/li[6]/div/input')
     ActionChains(browser).move_to_element(wz).click(wz).perform()
     time.sleep(2)
-    
     # 提交
     tpost = browser.find_element_by_xpath('/html/body/div[1]/div/div/section/div[5]/div/a')
     ActionChains(browser).move_to_element(tpost).click(tpost).perform()
-    
-    # confirm
-    confirm = browser.find_element_by_xpath('//*[@id="wapcf"]/div/div[2]/div[2]')
-    ActionChains(browser).move_to_element(confirm).click(confirm).perform()
 
+    # affirm
+    try:
+        affirm = browser.find_element_by_xpath('//*[@id="wapcf"]/div/div[2]/div[2]')
+        ActionChains(browser).move_to_element(affirm).click(affirm).perform()
+        print('打卡成功')
+    except:
+        ok = browser.find_element_by_xpath('//*[@id="wapat"]/div/div[2]/div')
+        ActionChains(browser).move_to_element(ok).click(ok).perform()
+        print('你今天已经打过卡了')
     time.sleep(2)
     #关闭浏览器
     browser.quit()
-    print('打卡成功')
+except:
+    print('打卡失败')
