@@ -48,9 +48,9 @@ if __name__ == '__main__':
     tpost = browser.find_element_by_xpath('/html/body/div[1]/div/div/section/div[5]/div/a')
     ActionChains(browser).move_to_element(tpost).click(tpost).perform()
     
-    # affirm
-    affirm = browser.find_element_by_xpath('//*[@id="wapcf"]/div/div[2]/div[2]')
-    ActionChains(browser).move_to_element(affirm).click(affirm).perform()
+    # confirm
+    confirm = browser.find_element_by_xpath('//*[@id="wapcf"]/div/div[2]/div[2]')
+    ActionChains(browser).move_to_element(confirm).click(confirm).perform()
 
     time.sleep(2)
     #关闭浏览器
