@@ -26,4 +26,4 @@ jobs:
         pip3 install -r requirements.txt
     - name: 'Sign In'
       run: |
-        python Auto_checkin.py
+        python3 444.py
