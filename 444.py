@@ -46,8 +46,14 @@ if __name__ == '__main__':
     tpost = browser.find_element_by_xpath('/html/body/div[1]/div/div/section/div[5]/div/a')
     ActionChains(browser).move_to_element(tpost).click(tpost).perform()
     # affirm
-    affirm = browser.find_element_by_xpath('//*[@id="wapcf"]/div/div[2]/div[2]')
-    ActionChains(browser).move_to_element(affirm).click(affirm).perform()
+    try:
+        affirm = browser.find_element_by_xpath('//*[@id="wapcf"]/div/div[2]/div[2]')
+        ActionChains(browser).move_to_element(affirm).click(affirm).perform()
+        print('打卡成功')
+    except:
+        ok = browser.find_element_by_xpath('//*[@id="wapat"]/div/div[2]/div')
+        ActionChains(browser).move_to_element(ok).click(ok).perform()
+        print('你今天已经打过卡了')
     
     time.sleep(2)
     #关闭浏览器
