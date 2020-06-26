@@ -17,8 +17,8 @@ import time
 
 if __name__ == '__main__':
     #这里改成你的统一认证用户名和密码
-    user_name = '2019055264'
-    pwd = 'wr015517'
+    user_name = '2019050437'
+    pwd = '000000'
 
     # 加上这两句话不打开浏览器
     option = webdriver.ChromeOptions()
