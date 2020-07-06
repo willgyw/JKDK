@@ -6,7 +6,7 @@
 @Description:  
 @LastEditors: gyw
 @LastEditTime: 2020-06-23 21:14:49
-'''
+
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -61,3 +61,4 @@ if __name__ == '__main__':
     #关闭浏览器
     browser.quit()
 
+'''
